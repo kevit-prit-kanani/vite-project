@@ -6,9 +6,6 @@ const productList = [
 ]
 
 export const ProductListView = () => {
-
-    const [searchParams, setSearchParams] = useSearchParams()
-
     return (
         <>
             <ul>
