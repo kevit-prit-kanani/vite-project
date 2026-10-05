@@ -14,6 +14,7 @@ export const Navbar = () => {
                 <Link to="/number-list" className="nav"> Number List </Link>
                 <Link to="/product-detail" className="nav"> Product List </Link>
                 <Link to="/redux-counter" className="nav"> Redux-counter </Link>
+                <Link to="/axios-user" className="nav"> Axios-user </Link>
             </nav>
         </>
     )

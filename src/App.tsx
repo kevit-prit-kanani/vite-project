@@ -10,6 +10,7 @@ import { Dashboard } from './component/Dashboard'
 import { Profile } from './component/Profile'
 import { Settings } from './component/settings'
 import { ReduxCounterPage } from './component/ReduxCounter'
+import { AxiosUser } from './component/axiosUser'
 
 function App() {
 
@@ -25,8 +26,9 @@ function App() {
           <Route path='/status-selector' element={<StatusSelector />} />
           <Route path='/number-list' element={<NumberList />} />
           <Route path='/product-detail' element={<ProductListView />} />
-          <Route path='/product-detail-view/:id' element={<ProductDetail id={0} />} />
+          <Route path='/product-detail-view/:id' element={<ProductDetail />} />
           <Route path='/redux-counter' element={<ReduxCounterPage />} />
+          <Route path='/axios-user' element={<AxiosUser />} />
         </Route>
       </Routes>
     </>
