@@ -1,8 +1,8 @@
 import './App.css'
 import { Route, Routes } from 'react-router'
 import { Layout } from './Layout/Layout'
-import { LikePost } from './component/LikePost'
-import { Greeting } from './component/UserGreeting'
+import { Posts } from './component/Post'
+import { Greeting } from './component/Greeting'
 import { StatusSelector } from './component/StatusSelector'
 import { NumberList } from './component/NumberList'
 import { ProductDetail, ProductListView } from './component/ProductDetailView'
@@ -21,7 +21,7 @@ function App() {
           <Route index path='/' element={<Dashboard />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/settings' element={<Settings />} />
-          <Route path='/like-posts' element={<LikePost />} />
+          <Route path='/posts' element={<Posts />} />
           <Route path='/greetings' element={<Greeting />} />
           <Route path='/status-selector' element={<StatusSelector />} />
           <Route path='/number-list' element={<NumberList />} />

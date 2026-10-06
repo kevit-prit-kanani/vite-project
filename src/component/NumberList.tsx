@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 
 const initiallist = [
@@ -23,10 +24,10 @@ export const NumberList = () => {
         <>
             <ul>
                 {list.map((element) =>
-                    <>
+                    <React.Fragment key={element.id}>
                         <li> {element.number}</li>
                         <button key={element.id} onClick={() => remove(element.id)}>delete</button>
-                    </>
+                    </React.Fragment>
                 )}
             </ul>
         </>

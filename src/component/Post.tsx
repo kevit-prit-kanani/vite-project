@@ -9,8 +9,19 @@ const initialState = {
     count: 0,
     flage: true
 }
+export const Posts = () => {
+    return (
+        <>
+            <h1>This is the post</h1>
+            <br />
+            <p>Here is the discription</p>
+            <br />
+            <LikePost />
+        </>
+    )
+}
 
-export const LikePost = () => {
+const LikePost = () => {
     const [like, setLike] = useState<Like>(initialState)
 
     function onClick() {

@@ -1,31 +1,55 @@
 import { useEffect, useState } from "react"
 import { api } from "../axios/axios"
 
-type Users = {
+type User = {
     name: string,
     email: string
 }
 
+type FetchUser = {
+    users: User | null,
+    error: boolean | null,
+    loading: boolean | null
+}
+
 export const AxiosUser = () => {
-    const [user, setUser] = useState<Users[]>([])
-    async function getUsers() {
-        const users = await api.get('/users')
-        setUser(users.data)
-    }
+    const [data, setData] = useState<FetchUser>({
+        users: null,
+        error: false,
+        loading: true
+    });
+
+
     useEffect(() => {
-        getUsers()
-    }, [user])
+        const fetchUsers = async () => {
+            try {
+                const getUser = await api.get('/users/1')
+                setData({
+                    users: getUser.data,
+                    error: false,
+                    loading: false
+                })
+            }
+            catch (error) {
+                setData({
+                    users: null,
+                    error: true,
+                    loading: false
+                })
+            }
+        };
+        fetchUsers();
+    }, [])
 
     return (
         <>
             <ol>
                 {
-                    user && user.map((element) =>
+                    data.loading ? <p>Loading</p> : data.error ? <p>Error</p> :
                         <>
-                            <div> Name: {element.name} | email: {element.email}  </div>
-                            <br />
+                            <p>Name: {data.users?.name}</p>
+                            <p>Email: {data.users?.email}</p>
                         </>
-                    )
                 }
             </ol>
         </>
