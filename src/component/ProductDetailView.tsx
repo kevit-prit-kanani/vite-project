@@ -1,4 +1,4 @@
-import { Link, useParams, useSearchParams } from "react-router"
+import { Link, useParams } from "react-router"
 
 const productList = [
     { id: 0, name: "t-shirt", price: 100, discription: "This is the best T shirt" },

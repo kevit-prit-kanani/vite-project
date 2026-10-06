@@ -9,6 +9,7 @@ const initialState = {
     count: 0,
     flage: true
 }
+
 export const Posts = () => {
     return (
         <>
